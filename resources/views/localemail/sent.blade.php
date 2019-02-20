@@ -21,7 +21,6 @@
                             <tr>
                                 <th>From</th>
                                 <th>Message</th>
-                                <th>Action</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -29,11 +28,7 @@
                             
                                 <tr>
                                     <td>{{ $doc->toUser->email}}</td>
-                                    <td>{{ $doc->mail_body }}</td>
-                                    <td>
-                                    
-                                  
-                                    
+                                    <td>{{ $doc->mail_body }}</td>   
                                 </tr>
                            
                         @endforeach
@@ -42,7 +37,7 @@
                             <tr>
                                 <th>From</th>
                                 <th>Message</th>
-                                <th>Action</th>
+                                
                             </tr>
                         </tfoot>
                     </table>
