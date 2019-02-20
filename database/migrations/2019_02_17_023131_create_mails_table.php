@@ -18,6 +18,7 @@ class CreateMailsTable extends Migration
             $table->unsignedInteger('user_id');
             $table->longText('mail_body');
             $table->unsignedInteger('to');
+            $table->binary('status'); //read unread status
             $table->timestamps();
 
             $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade')->onUpdate('cascade');
