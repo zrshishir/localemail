@@ -14,7 +14,33 @@
                         </div>
                     @endif
 
-                    You are logged in!
+                    <div class="row">
+                        <label for="user">Total User: </label>
+                        <div class="col-md-6">
+                            <h3>{{$totalUser}}</h3>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <label for="user">Total Block User: </label>
+                        <div class="col-md-6">
+                            <h3>{{$blockUser}}</h3>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <label for="user">Total UnBlock User: </label>
+                        <div class="col-md-6">
+                            <h3>{{$unblockUser}}</h3>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <label for="user">Total Mail: </label>
+                        <div class="col-md-6">
+                            <h3>{{$totalMail}}</h3>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>

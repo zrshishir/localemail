@@ -17,8 +17,8 @@ class LocalMailController extends Controller
     }
 
     public function create(){
-        $users =  User::pluck('id', 'email');
-        return view('localemail.form', $users);
+        $users =  User::select('id', 'email')->get();
+        return view('localemail.form', get_defined_vars());
     }
 
     public function store(Request $request){
@@ -64,7 +64,7 @@ class LocalMailController extends Controller
     }
 
     public function sent(){
-        $documents = LocalMail::with(['toUser'])->where('From', Auth::user()->id)->get();
+        $documents = LocalMail::with(['toUser'])->where('user_id', Auth::user()->id)->get();
         return view('localemail.sent', get_defined_vars());
     }
 

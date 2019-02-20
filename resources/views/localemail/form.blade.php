@@ -15,13 +15,18 @@
                             <label for="to" class="col-md-4 col-form-label text-md-right">{{ __('Receiver E-Mail Address') }}</label>
 
                             <div class="col-md-6">
-                                <input id="to" type="text" class="form-control{{ $errors->has('to') ? ' is-invalid' : '' }}" name="to" value="{{ old('to') }}" required>
+                                <select name="to" id="">
+                                    @foreach($users as $usr)
+                                    <option value="{{$usr->id}}">{{$usr->email}}</option>
+                                    @endforeach
+                                </select>
+                                <!-- <input id="to" type="text" class="form-control{{ $errors->has('to') ? ' is-invalid' : '' }}" name="to" value="{{ old('to') }}" required>
 
                                 @if ($errors->has('to'))
                                     <span class="invalid-feedback" role="alert">
                                         <strong>{{ $errors->first('to') }}</strong>
                                     </span>
-                                @endif
+                                @endif -->
                             </div>
                         </div>
 

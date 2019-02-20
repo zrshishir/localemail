@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Illuminate\Http\RedirectResponse;
 use App\User;
+use App\Model\LocalMail\LocalMail;
 use Auth;
 use Carbon\Carbon;
 
@@ -29,7 +30,16 @@ class HomeController extends Controller
     {
         $users = Auth::user();
         // dd($users->id);
-        return view('home');
+        if($users->id ==  1){
+            $totalUser = User::sum('id');
+            $blockUser = User::where('active',  1)->sum('id');
+            $unblockUser = $totalUser - $blockUser;
+            $totalMail = LocalMail::sum('id');
+            return view('admin-dashboard',  get_defined_vars());
+        }else{
+            return view('home');
+        }
+        
     }
 
     public function users(){
