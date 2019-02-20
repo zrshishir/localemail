@@ -34,17 +34,17 @@
                                 <td>{{ $doc->name}}</td>
                                 <td>{{ $doc->email }}</td>
                                 <td>
-                                    <a href="{{url('users/active/'.$doc->id)}}">
+                                    
                                         <button type="button" class="btn btn-primary">
                                             <?php
-                                                if($doc->active == 1){
-                                                    echo "active";
+                                                if($doc->updated_at->addDays(2) > toDay()){
+                                                    echo "Returned";
                                                 }else{
-                                                    echo "Inactive";
+                                                    echo "Lost";
                                                 }
                                             ?>
                                         </button>
-                                    </a>
+                                   
                                 </td>
                                 <td>
                                         @if($doc->active == 1)
@@ -56,7 +56,7 @@
                                         @else
                                             <a href="{{url('users/active/'.$doc->id)}}" >
                                                 <button type="button" class="btn btn-danger btn-sm">
-                                                    unblock
+                                                    unblock 
                                                 </button>
                                             </a>
                                         @endif

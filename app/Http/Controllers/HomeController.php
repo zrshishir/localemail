@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use Illuminate\Http\RedirectResponse;
 use App\User;
 use Auth;
+use Carbon\Carbon;
 
 class HomeController extends Controller
 {
@@ -33,6 +34,7 @@ class HomeController extends Controller
 
     public function users(){
         $users =  User::get();
+        
         return view('users.index', get_defined_vars());
     }
 
