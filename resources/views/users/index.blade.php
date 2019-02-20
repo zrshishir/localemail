@@ -50,13 +50,13 @@
                                         @if($doc->active == 1)
                                             <a href="{{url('users/active/'.$doc->id)}}" >
                                                 <button type="button" class="btn btn-primary btn-sm">
-                                                    active
+                                                    block
                                                 </button>
                                             </a>
                                         @else
                                             <a href="{{url('users/active/'.$doc->id)}}" >
                                                 <button type="button" class="btn btn-danger btn-sm">
-                                                    Inactive
+                                                    unblock
                                                 </button>
                                             </a>
                                         @endif

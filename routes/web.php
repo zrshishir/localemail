@@ -21,7 +21,13 @@ Route::group(['middleware' => 'auth'], function(){
     Route::get('/users', 'HomeController@users');
     Route::get('/users/active/{id}', 'HomeController@active');
     Route::get('/users/delete/{id}', 'HomeController@delete');
-    // Route::get('/document', 'Document\DocumentController@index');
+
+    Route::get('/mails', 'LocalMail\LocalMailController@index');
+    Route::get('/mails/create', 'LocalMail\LocalMailController@create');
+    Route::post('/mails/store', 'LocalMail\LocalMailController@store');
+    Route::get('/mails/view/{id}', 'LocalMail\LocalMailController@view');
+    Route::get('/mails/delete/{id}', 'LocalMail\LocalMailController@delete');
+    Route::get('/mails/sent', 'LocalMail\LocalMailController@sent');
     // Route::get('document/create', 'Document\DocumentController@create');
     // Route::post('document/store', 'Document\DocumentController@store');
 });

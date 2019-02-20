@@ -31,7 +31,7 @@
                         @foreach($documents as $doc)
                             @if($doc->status == 0)
                                 <tr>
-                                    <td><h2>{{ $doc->from->email}}</h2></td>
+                                    <td><h2>{{ $doc->toUser->email}}</h2></td>
                                     <td><h2>{{ $doc->mail_body }}</h2></td>
                                     <td><h2>
                                         
@@ -51,7 +51,7 @@
                                 </tr>
                             @else
                                 <tr>
-                                    <td>{{ $doc->from->email}}</td>
+                                    <td>{{ $doc->toUser->email}}</td>
                                     <td>{{ $doc->mail_body }}</td>
                                     <td>
                                     
